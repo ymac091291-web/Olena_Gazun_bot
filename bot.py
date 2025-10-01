@@ -71,7 +71,7 @@ def cmd_start(message):
     if VIDEO_FILE and os.path.exists(VIDEO_FILE):
         try:
             with open(VIDEO_FILE, "rb") as vid:
-                bot.send_video(chat_id, vid)
+                #bot.send_video(chat_id, vid)
         except Exception as e:
             bot.send_message(chat_id, f"❗️ Не вдалося надіслати відео: {e}")
     else:
@@ -81,7 +81,7 @@ def cmd_start(message):
 
     links = DAILY_VIDEOS[0]
     for link in links:
-        bot.send_message(chat_id, f"🎬 Ваше відео на сьогодні: {link}")
+        #bot.send_message(chat_id, f"🎬 Ваше відео на сьогодні: {link}")
     user_progress[chat_id] = 1
 
 @bot.message_handler(func=lambda msg: msg.text == "🚀 Старт")
